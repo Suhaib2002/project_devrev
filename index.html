@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+<body background="loginbackground.jpg">
+   
+    <div class="content">
+        <form id="login" style="display: block;">
+            <label id="login_usernamel" >Email:</label>
+            <input type="text" id="input_data" class="username_inputi" placeholder="Enter email id" required>
+            <label id="login_usernamel">PASSWORD:</label>
+            <input type="password" id="input_password" class="password_inputi" placeholder="Enter tha password" required>
+            <center>
+            <button type="submit" class="submit_input_login" id="loguser">LOGIN</button></center>
+            <a href="#" class="toggle_btn" onclick="Register()">Create an account</a>
+        </form>
+        <form id="signin"  style="display: none;">
+            <label id="signin_usernamel">USERNAME:</lable>
+            <input type="text" id="user_data" class="signin_usernamei" placeholder="Enter user name" required>
+            <label id="sign_email">EMAIL:</label>
+            <input type="email" id="user_mail" class="signin_emaili" placeholder="Enter email id" required>
+            <label id="signin_password">PASSWORD:</label>
+            <input type="text" id="user_password" class="signin_passwordi" placeholder="Enter password" required>
+           
+        <center id="dis">
+            <button type="submit" class="submit_input_signin" id="sign_btn">SIGNIN</button>
+            
+             </center>
+             <a href="#" class="toggle_btn"  onclick="Signup()">Back to Login</a>
+        </form>
+        </div>
+        <div class = "dashboard" style="background-color: white;">
+
+        </div>
+
+    
+   <script>
+    var login=document.getElementById("login");
+    var signin=document.getElementById("signin");
+    function Signup(){
+        signin.style.display='none';
+        login.style.display='block';
+    }
+    function Register(){
+        signin.style.display='block';
+        login.style.display='none';
+    }
+   </script>
+   
+  <script src="app.js"></script>
+</body>

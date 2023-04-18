@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Admin Page</title>
+</head>
+
+<body>
+    <style>
+        .topbar {
+            height: 10%;
+            width: 95%;
+            margin-left: 2.5%;
+            padding: 0.5px;
+            background-color: rgb(85, 129, 240);
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .btn {
+            margin-top: 1%;
+            background-color: rgb(85, 129, 240);
+            border: none;
+            padding: 1%;
+            border-radius: 10px;
+            color: white;
+            width: 20%;
+            font-weight: bold;
+        }
+        
+        #tabledis {
+            margin-top: 0.5%;
+        }
+        
+        thead {
+            background-color: rgb(85, 129, 240, 0.9);
+        }
+        
+        button {
+            background-color: rgb(85, 129, 240);
+            border: none;
+            padding: 2%;
+            border-radius: 10px;
+            color: white;
+            width: 50%;
+            font-weight: bold;
+            margin-top: 1%;
+        }
+        
+        input[type=text],
+        input[type=number],
+        input[type=time] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+        
+        .addpage,
+        .editpage {
+            margin-top: 5%;
+            width: 40%;
+            margin-left: 30%;
+        }
+        
+        #tabledis {
+            width: 95%;
+            margin-left: 2.5%;
+        }
+    </style>
+    <div class="topbar">
+        <center>
+            <table style="width:100%">
+                <tr>
+                    <td style="width:90%">
+                        <center>
+                            <h2>ADMIN</h2>
+                        </center>
+                    </td>
+                    <td style="width:10%">
+                        <h4 onclick="logout()"><button>Logout</button></h4>
+                    </td>
+                </tr>
+            </table>
+
+
+        </center>
+    </div>
+    <div class="display" id="display">
+        <center><button class="btn" id="addbtn">Add New Hospital</button></center>
+        <table class="table table-striped" id="tabledis">
+            <thead>
+                <tr>
+                    <th>Vaccination Centre</th>
+                    <th>Contact Number</th>
+                    <th>Timing</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="centre_list">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="addpage" id="addpage" style="display: none;">
+        <form id="addvf">
+            <label id="vlname">Centre Name</lable>
+            <input type="text" id="vname"  placeholder="Enter user Vaccination centre name" required>
+            <label id="vlmobile">Mobile Number</label>
+            <input type="number" id="vmobile" placeholder="Enter Mobile Number" required>
+            <label id="vltime">Vaccination Timing</label>
+            <input type="time" id="vot" placeholder="Select the opening time " required>
+            <input type="time" id="vct" placeholder="Select the closeing time" required>
+            <center id="dis">
+                <button type="submit" id="Add">Add Vaccination centre</button><br>
+                <button id="Back">Back</button>
+
+            </center>
+
+        </form>
+    </div>
+    <div class="editpage" id="editpage" style="display: none;">
+        <form id="editvf">
+            <p id="id" style="display: none;"></p>
+            <label>Centre Name</lable>
+            <input type="text" id="ename"  placeholder="Enter user Vaccination centre name" required>
+            <label>Mobile Number</label>
+            <input type="number" id="emobile" placeholder="Enter Mobile Number" required>
+            <label>Vaccination Timing</label>
+            <input type="time" id="eot" placeholder="Select the opening time " required>
+            <input type="time" id="ect" placeholder="Select the closeing time" required>
+            <center id="edis">
+                <button type="submite" id="eAdd">edit Vaccination centre</button><br>
+                <button id="Backtv">Back</button>
+
+            </center>
+
+        </form>
+    </div>
+    <script src="admin.js"></script>
+</body>
+
+</html>

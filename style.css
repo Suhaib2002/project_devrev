@@ -1,0 +1,44 @@
+body{
+    background-color: aliceblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ 
+ .content{
+  
+  background-color: rgb(235, 236, 235,0.7 );
+  margin-top: 15%;
+    margin-left: 55%;
+    margin-right: 10%;
+    padding-top: 2%;
+    font-weight: bold;
+    border-radius: 10px;
+    
+    
+ }
+ input[type=text], input[type=password], input[type=email] {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+   border-radius: 10px;
+ }
+
+ #login,#signin
+ {
+  padding: 5%;
+ }
+
+ button{
+ background-color: blue;
+ border: none;
+ padding: 2%;
+ border-radius: 10px;
+ color: white;
+width:20%;
+font-weight: bold;
+}
+
+/* admin page */
